@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/index.css') }}"
+    />
+  </head>
+  <body>
+    <a href="/start">Start</a>
+    <h2>
+      Gesture based tool for sterile browsing of radiology images (Team ID:
+      PNT2022TMID06155)
+    </h2>
+    <div class="container">
+      <img src="./static/images/hand.jpg" alt="hand image" />
+      <div class="instructions">
+        <h3>Instructions</h3>
+        <ul>
+          <li>This tool is used for sterile browsing of radiology images.</li>
+          <li>To use this app first click the start link on the top.</li>
+          <li>Then upload the radiology images.</li>
+          <li>Then start browsing the radiology images.</li>
+          <li>The gestures are:</li>
+          <ul>
+            <li>
+              0 to start browsing(Before every gesture we have to start the
+              browsing first).
+            </li>
+            <li>1 to rotate the image clockwise.</li>
+            <li>2 to rotate the image couter-clockwise.</li>
+            <li>3 for next image.</li>
+            <li>4 for previous image.</li>
+            <li>5 to reset the rotation for current image</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
