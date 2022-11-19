@@ -19,6 +19,7 @@ print("Loaded model from disk")
 cap = cv2.VideoCapture(0)
 
 canStart = False
+interrupt = False
 uploadsPath = "uploads"
 totalImages = 0
 outputImages = []
@@ -71,6 +72,8 @@ def filterImage(img):
 
 def cameraRenderer():
     while True:
+        if interrupt:
+            break
         if not canStart:
             continue
         _, frame = cap.read()
@@ -89,6 +92,8 @@ def outputRenderer():
     canBrowse = False
     i = 0
     while True:
+        if interrupt:
+            break
         if not canStart:
             continue
         if (canBrowse):
@@ -121,6 +126,8 @@ def outputRenderer():
 
 def filterRenderer():
     while True:
+        if interrupt:
+            break
         if not (canStart):
             continue
         _, frame = cap.read()
@@ -199,9 +206,9 @@ def upload():
 
 @app.route("/stop")
 def stop():
-    global canStart, outputImages
+    global outputImages, interrupt
     outputImages = []
-    canStart = False
+    interrupt = False
     shutil.rmtree(UPLOAD_FOLDER)
     os.mkdir(UPLOAD_FOLDER)
     return redirect('/')
@@ -210,6 +217,8 @@ def stop():
 def startPredict():
     global predicted
     while True:
+        if interrupt:
+            break
         if not canStart:
             continue
         _, frame = cap.read()
