@@ -208,7 +208,7 @@ def upload():
 def stop():
     global outputImages, interrupt
     outputImages = []
-    interrupt = False
+    interrupt = True
     shutil.rmtree(UPLOAD_FOLDER)
     os.mkdir(UPLOAD_FOLDER)
     return redirect('/')
