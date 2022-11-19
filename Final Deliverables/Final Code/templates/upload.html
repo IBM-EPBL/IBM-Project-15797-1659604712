@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Page</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/upload.css') }}"
+    />
+  </head>
+  <body>
+    <h2>Select image(s) to upload</h2>
+    <form method="post" action="/upload_image" enctype="multipart/form-data">
+      <p>
+        <input
+          type="file"
+          name="files[]"
+          multiple="true"
+          autocomplete="off"
+          required
+        />
+      </p>
+      <p>
+        <input type="submit" value="Upload" />
+      </p>
+    </form>
+  </body>
+</html>

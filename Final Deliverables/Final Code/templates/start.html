@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gesture based tool for sterile browsing of radiology images</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/start.css') }}"
+    />
+  </head>
+  <body>
+    <a href="/stop">X</a>
+    <div class="webcam-container">
+      <img src="{{url_for('webcam_feed')}}" />
+      <img src="{{url_for('filter_feed')}}" />
+    </div>
+    <div class="output-container">
+      <img src="{{url_for('output_feed')}}" />
+    </div>
+  </body>
+</html>
